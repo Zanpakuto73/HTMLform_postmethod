@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+Welcome <?php echo $_POST["Fname"] . " " . $_POST["Lname"]; ?><br>
+Your email address is: <?php echo $_POST["email"]; ?><br>
+Your student ID is: <?php echo $_POST["student_ID"];?><br>
+Your Mac Address is: <?php echo $_POST["mac_address"];?><br>
+Your Raspberry Pi type is <?php echo $_POST["RPi_Type"];?><br>
+
+<?php
+$str= $_POST["Fname"].",".$_POST["Lname"].",".$_POST["email"].",".$_POST["student_ID"].",".$_POST["mac_address"].",".$_POST["RPi_Type"];
+$cmd="echo '$str' >> data2.txt";
+exec($cmd);
+?>
+<br>Click <a href="data2.txt">here</a> to download text file.
+<br>Click <a href="StudentInfo.html">here</a> to go back to the form.
+</body>
+</html>
